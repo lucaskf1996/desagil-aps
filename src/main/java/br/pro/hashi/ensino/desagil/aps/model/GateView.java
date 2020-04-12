@@ -17,9 +17,6 @@ public class GateView extends JPanel implements ActionListener {
     private final Switch switch2;
 
 
-
-
-
     public GateView(Gate gate) {
         this.gate = gate;
 
@@ -31,11 +28,9 @@ public class GateView extends JPanel implements ActionListener {
         switch2 = new Switch();
 
 
-
         JLabel entradaLabel = new JLabel("Entrada");
         JLabel entrada2Label = new JLabel("Entrada2");
         JLabel saidaLabel = new JLabel("Saida");
-
 
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -49,7 +44,6 @@ public class GateView extends JPanel implements ActionListener {
         add(saidaField);
 
 
-
         entradaField.addActionListener(this);
         entradaField2.addActionListener(this);
         saidaField.addActionListener(this);
@@ -57,20 +51,21 @@ public class GateView extends JPanel implements ActionListener {
         saidaField.setEnabled(false);
         update();
     }
+
     private void update() {
         boolean result;
 
 
         result = gate.read();
         //System.out.println(result);
-        if (result == true){
+        if (result == true) {
             saidaField.setSelected(true);
-        }
-        else if (result == false){
+        } else if (result == false) {
             saidaField.setSelected(false);
         }
 
     }
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         AbstractButton abstractButton = (AbstractButton) actionEvent.getSource();
@@ -79,20 +74,19 @@ public class GateView extends JPanel implements ActionListener {
         if (checkbox == entradaField) {
             System.out.println("Checkbox1");
             System.out.println(selected);
-            if(selected == true){
+            if (selected == true) {
                 switch1.turnOn();
                 gate.connect(0, switch1);
-            }
-            else if (selected == false){
+            } else if (selected == false) {
                 switch1.turnOff();
                 gate.connect(0, switch1);
             }
-        }if (checkbox == entradaField2) {
-            if(selected == true){
+        }
+        if (checkbox == entradaField2) {
+            if (selected == true) {
                 switch2.turnOn();
                 gate.connect(1, switch2);
-            }
-            else if (selected == false){
+            } else if (selected == false) {
                 switch2.turnOff();
                 gate.connect(1, switch2);
             }

@@ -1,7 +1,6 @@
 package br.pro.hashi.ensino.desagil.aps.model;
 
 
-
 import br.pro.hashi.ensino.desagil.aps.model.NandGate;
 import br.pro.hashi.ensino.desagil.aps.model.NotGate;
 import br.pro.hashi.ensino.desagil.aps.model.Gate;

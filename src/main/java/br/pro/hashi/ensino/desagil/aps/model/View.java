@@ -21,7 +21,8 @@ public class View extends JPanel implements ActionListener {
         add(menu);
         addGateView(0);
         menu.addActionListener(this);
-        }
+    }
+
     private void addGateView(int index) {
 
         // 1. Usar o índice para pegar a calculadora do menu.
@@ -33,6 +34,7 @@ public class View extends JPanel implements ActionListener {
         // 3. Adicionar essa representação gráfica no JPanel.
         add(gateView);
     }
+
     public void actionPerformed(ActionEvent event) {
         remove(gateView);
         int index = menu.getSelectedIndex();
