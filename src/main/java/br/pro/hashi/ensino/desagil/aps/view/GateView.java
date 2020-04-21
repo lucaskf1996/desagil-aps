@@ -1,4 +1,8 @@
-package br.pro.hashi.ensino.desagil.aps.model;
+package br.pro.hashi.ensino.desagil.aps.view;
+
+import br.pro.hashi.ensino.desagil.aps.model.Gate;
+import br.pro.hashi.ensino.desagil.aps.model.Light;
+import br.pro.hashi.ensino.desagil.aps.model.Switch;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,6 +66,10 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
         saidaField.setEnabled(false);
         addMouseListener(this);
+
+        gate.connect(0, switch1);
+        gate.connect(1, switch2);
+
         update();
     }
 
@@ -90,19 +98,15 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         if (checkbox == entradaField) {
             if (selected) {
                 switch1.turnOn();
-                gate.connect(0, switch1);
             } else if (!selected) {
                 switch1.turnOff();
-                gate.connect(0, switch1);
             }
         }
         if (checkbox == entradaField2) {
             if (selected) {
                 switch2.turnOn();
-                gate.connect(1, switch2);
             } else if (!selected) {
                 switch2.turnOff();
-                gate.connect(1, switch2);
             }
         }
         update();
