@@ -7,12 +7,15 @@ public class AndGate extends Gate {
     public AndGate() {
         super("AND", 2);
         nand = new NandGate();
-        nand2= new NandGate();
+        nand2 = new NandGate();
         nand2.connect(0, nand);
         nand2.connect(1, nand);
     }
+
     @Override
-    public boolean read() { return nand2.read(); }
+    public boolean read() {
+        return nand2.read();
+    }
 
     @Override
     public void connect(int inputIndex, Emitter emitter) {

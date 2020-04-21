@@ -1,6 +1,6 @@
 package br.pro.hashi.ensino.desagil.aps.model;
 
-public abstract class Gate implements Emitter, Receiver{
+public abstract class Gate implements Emitter, Receiver {
     private final String name;
     private final int inputSize;
 
